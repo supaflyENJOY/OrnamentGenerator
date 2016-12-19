@@ -86,8 +86,6 @@ namespace Vishivator {
             text = board.getWord().ToUpper();
             inputWord.Text = text;
             bmp.Save(text+".bmp");
-
-            //textBox1.Text = ps.ToString();
         }
     }
 }
