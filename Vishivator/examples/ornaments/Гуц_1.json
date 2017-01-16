@@ -1,0 +1,29 @@
+{
+  "imageFile": "Гуц_1.png",
+  "name": "Гуцульщина - Заготовка #1",
+  "backgroundColor": {
+	"R": 220,
+	"G": 219,
+	"B": 214,
+  },
+  "redColor": {
+	"R": 188,
+	"G": 19,
+	"B": 58,
+  },
+  "blackColor": {
+	"R": 8,
+	"G": 7,
+	"B": 12,
+  },
+  "ornamentPlaces": [
+    {
+      "rotate": 43.0,
+	  "width": 172,
+      "centerPos": {
+        "X": 205,
+        "Y": 130
+      }
+    }
+  ]
+}

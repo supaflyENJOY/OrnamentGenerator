@@ -1,0 +1,29 @@
+{
+  "imageFile": "Карп_1.png",
+  "name": "Прикарпаття - Заготовка #1",
+  "backgroundColor": {
+	"R": 0,
+	"G": 0,
+	"B": 0,
+  },
+  "redColor": {
+	"R": 222,
+	"G": 6,
+	"B": 30,
+  },
+  "blackColor": {
+	"R": 247,
+	"G": 133,
+	"B": 63,
+  },
+  "ornamentPlaces": [
+    {
+      "rotate": 45.0,
+	  "width": 175,
+      "centerPos": {
+        "X": 177,
+        "Y": 102
+      }
+    }
+  ]
+}

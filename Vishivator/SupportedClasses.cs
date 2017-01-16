@@ -6,7 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vishivator {
-    
+
+    public class ColorO {
+        public int R { get; set; }
+        public int G { get; set; }
+        public int B { get; set; }
+    }
+
     public class OrnamentPlace {
         public float rotate { get; set; }
         public int width { get; set; }
@@ -16,6 +22,9 @@ namespace Vishivator {
     public class OrnamentFounding {
         public string imageFile { get; set; }
         public string name { get; set; }
+        public ColorO backgroundColor { get; set; }
+        public ColorO redColor { get; set; }
+        public ColorO blackColor { get; set; }
         public List<OrnamentPlace> ornamentPlaces { get; set; }
     }
 

@@ -1,0 +1,29 @@
+{
+  "imageFile": "Поліс_1.png",
+  "name": "Полісся - Заготовка #1",
+  "backgroundColor": {
+	"R": 255,
+	"G": 255,
+	"B": 255,
+  },
+  "redColor": {
+	"R": 0,
+	"G": 251,
+	"B": 100,
+  },
+  "blackColor": {
+	"R": 233,
+	"G": 227,
+	"B": 99,
+  },
+  "ornamentPlaces": [
+    {
+      "rotate": 45.0,
+	  "width": 280,
+      "centerPos": {
+        "X": 215,
+        "Y": 180
+      }
+    }
+  ]
+}

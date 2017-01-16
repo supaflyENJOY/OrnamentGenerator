@@ -74,7 +74,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="examples\ornaments\img_1.json" />
     <None Include="examples\ornaments\test.json" />
+    <None Include="examples\ornaments\Гуц_1.json" />
+    <None Include="examples\ornaments\Карп_1.json" />
+    <None Include="examples\ornaments\Поліс_1.json" />
+    <None Include="examples\ornaments\Поліс_2.json" />
+    <None Include="examples\ornaments\Полт_1.json" />
     <None Include="examples\shirts\female1.json" />
     <None Include="examples\shirts\male1.json" />
     <None Include="packages.config" />
@@ -95,6 +101,11 @@
   <ItemGroup>
     <Content Include="examples\letters.txt" />
     <Content Include="examples\ornaments\img_1.png" />
+    <Content Include="examples\ornaments\Гуц_1.png" />
+    <Content Include="examples\ornaments\Карп_1.png" />
+    <Content Include="examples\ornaments\Поліс_1.png" />
+    <Content Include="examples\ornaments\Поліс_2.png" />
+    <Content Include="examples\ornaments\Полт_1.png" />
     <Content Include="examples\shirts\f_1.png" />
     <Content Include="examples\shirts\m_1.png" />
     <Content Include="letters.txt" />

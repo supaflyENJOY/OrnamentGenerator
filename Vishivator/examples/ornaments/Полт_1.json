@@ -1,0 +1,29 @@
+{
+  "imageFile": "Полт_1.png",
+  "name": "Полтава - Заготовка #1",
+  "backgroundColor": {
+	"R": 255,
+	"G": 255,
+	"B": 255,
+  },
+  "redColor": {
+	"R": 64,
+	"G": 170,
+	"B": 255,
+  },
+  "blackColor": {
+	"R": 70,
+	"G": 70,
+	"B": 70,
+  },
+  "ornamentPlaces": [
+    {
+      "rotate": 45.0,
+	  "width": 85,
+      "centerPos": {
+        "X": 122,
+        "Y": 109
+      }
+    }
+  ]
+}

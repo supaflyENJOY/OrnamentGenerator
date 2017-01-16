@@ -102,12 +102,14 @@ namespace Vishivator {
             var imageSize = 1024;
             var bsize = imageSize / (board.getMaxValue() * 2);
             var spoint = imageSize / 2;
-            SolidBrush redBrush = new SolidBrush(Color.Red);
-            SolidBrush blackBrush = new SolidBrush(Color.Black);
+            SolidBrush redBrush = new SolidBrush(Color.FromArgb(255, foundings[fix].redColor.R, foundings[fix].redColor.G, foundings[fix].redColor.B));
+            SolidBrush blackBrush = new SolidBrush(Color.FromArgb(255, foundings[fix].blackColor.R, foundings[fix].blackColor.G, foundings[fix].blackColor.B));
             SolidBrush grayBrush = new SolidBrush(Color.Gray);
+            
             Bitmap bmp = new Bitmap(imageSize, imageSize);
             Graphics graphics = Graphics.FromImage(bmp);
-            graphics.Clear(Color.White);
+            panel1.BackColor = Color.FromArgb(foundings[fix].backgroundColor.R, foundings[fix].backgroundColor.G, foundings[fix].backgroundColor.B);
+            graphics.Clear(Color.Transparent);
             foreach (var p in board.points) {
                 graphics.FillRectangle(p.Color == 1 ? redBrush : blackBrush, new Rectangle(spoint + p.X * bsize, spoint - (p.Y + 1) * bsize, bsize, bsize)); // 1
                 graphics.FillRectangle(p.Color == 1 ? redBrush : blackBrush, new Rectangle(spoint - (p.Y + 1) * bsize, spoint - (p.X + 1) * bsize, bsize, bsize)); // 2
