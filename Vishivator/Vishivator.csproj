@@ -74,6 +74,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="examples\ornaments\test.json" />
+    <None Include="examples\shirts\female1.json" />
+    <None Include="examples\shirts\male1.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,6 +93,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="examples\letters.txt" />
+    <Content Include="examples\ornaments\img_1.png" />
+    <Content Include="examples\shirts\f_1.png" />
+    <Content Include="examples\shirts\m_1.png" />
     <Content Include="letters.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

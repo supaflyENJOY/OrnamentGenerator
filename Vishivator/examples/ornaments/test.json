@@ -1,0 +1,14 @@
+{
+  "imageFile": "img_1.png",
+  "name": "Тестовый пример",
+  "ornamentPlaces": [
+    {
+      "rotate": 45.0,
+	  "width": 511,
+      "centerPos": {
+        "X": 790,
+        "Y": 335
+      }
+    }
+  ]
+}
