@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vishivator", "Vishivator\Vishivator.csproj", "{9E9E4952-6E1D-48B9-A7C8-55E8DB5A776C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vishivator2.0", "Vishivator2.0\Vishivator2.0.csproj", "{C23457F8-560D-48B3-A8C2-B5C350BE160A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9E9E4952-6E1D-48B9-A7C8-55E8DB5A776C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E9E4952-6E1D-48B9-A7C8-55E8DB5A776C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E9E4952-6E1D-48B9-A7C8-55E8DB5A776C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23457F8-560D-48B3-A8C2-B5C350BE160A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23457F8-560D-48B3-A8C2-B5C350BE160A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23457F8-560D-48B3-A8C2-B5C350BE160A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23457F8-560D-48B3-A8C2-B5C350BE160A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

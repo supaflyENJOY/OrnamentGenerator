@@ -1,0 +1,19 @@
+﻿<Window x:Class="Vishivator2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vishivator2._0"
+        mc:Ignorable="d"
+        Title="Ukrainian ornament generator" Height="239.726" Width="445.89">
+    <Grid>
+        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="23" Margin="152,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <ComboBox x:Name="typeBox" HorizontalAlignment="Left" Margin="152,63,0,0" VerticalAlignment="Top" Width="250"/>
+        <Label x:Name="label" Content="Введіть ім'я:" HorizontalAlignment="Left" Margin="68,16,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Виберіть орнамент:" HorizontalAlignment="Left" Margin="26,61,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Виберіть тип рубахи:" HorizontalAlignment="Left" Margin="20,109,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="shirtBox" HorizontalAlignment="Left" Margin="152,110,0,0" VerticalAlignment="Top" Width="250"/>
+        <Button x:Name="button" Content="Створити" HorizontalAlignment="Left" Margin="114,153,0,0" VerticalAlignment="Top" Width="196" Height="37" FontSize="20" Click="CreateOrnament_Click"/>
+
+    </Grid>
+</Window>
