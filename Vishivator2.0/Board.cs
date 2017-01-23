@@ -75,6 +75,7 @@ namespace Vishivator {
         }
 
         public void setWord(string _word) {
+            Clear();
             for(int i=0; i < _word.Length; i++) {
                 if (addLetter(_word[i])) word += _word[i];
             }

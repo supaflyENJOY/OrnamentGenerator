@@ -18,12 +18,17 @@ namespace Vishivator {
         List<Letter> letters;
         List<OrnamentFounding> foundings;
         List<Shirt> shirts;
+        List<MapRegion> mregions;
+
+        int currentRegion = -1;
 
         public MainForm() {
             InitializeComponent();
             letters = new List<Letter>();
             foundings = new List<OrnamentFounding>();
             shirts = new List<Shirt>();
+            var regs = File.ReadAllText("regions.json", Encoding.UTF8);
+            mregions = JsonConvert.DeserializeObject<List<MapRegion>>(regs);
             var lettersUnformatted = File.ReadAllLines("letters.txt",Encoding.UTF8);
             for(int i=0; i < lettersUnformatted.Length; i++) {
                 var lunf = lettersUnformatted[i].Split('|');
@@ -33,21 +38,20 @@ namespace Vishivator {
             var ornaments = Directory.GetFiles("ornaments/", "*.json");
             string tempstr;
             for (int i=0; i < ornaments.Length; i++) {
-                tempstr = File.ReadAllText(ornaments[i]); ;
+                tempstr = File.ReadAllText(ornaments[i]);
                 foundings.Add(JsonConvert.DeserializeObject<OrnamentFounding>(tempstr));
-                comboBox1.Items.Add(foundings[i].name);
+               // listBox1.Items.Add(foundings[i].name);
             }
             var shirtFiles = Directory.GetFiles("shirts/", "*.json");
             for (int i = 0; i < shirtFiles.Length; i++) {
                 tempstr = File.ReadAllText(shirtFiles[i]);
                 shirts.Add(JsonConvert.DeserializeObject<Shirt>(tempstr));
-                comboBox2.Items.Add(shirts[i].name);
+                listBox2.Items.Add(shirts[i].name);
             }
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
+            listBox2.SelectedIndex = 0;
             Console.WriteLine("Found " + foundings.Count + " items.");
         }
 
@@ -86,8 +90,20 @@ namespace Vishivator {
         }
 
         private void CreateOrnament_Click(object sender, EventArgs e) {
-            var fix = comboBox1.SelectedIndex;
-            var six = comboBox2.SelectedIndex;
+            var fcix = listBox1.SelectedIndex;
+            int fix = 0;
+            if (fcix == -1 || currentRegion == -1) return;
+            int rc = -1;
+            for(int i=0; i < foundings.Count; i++) {
+                if(foundings[i].region == currentRegion) {
+                    rc++;
+                    if(rc == fcix) {
+                        fix = i;
+                        break;
+                    }
+                }
+            }
+            var six = listBox2.SelectedIndex;
             string text = inputWord.Text.ToLower().Trim();
             if(text.IndexOf(' ') >= 0) {
                 MessageBox.Show("Please, remove spaces!");
@@ -151,10 +167,58 @@ namespace Vishivator {
             orig.Save(text + fix + ".bmp");
             pictureBox1.Image = orig;
             pictureBox2.Image = shirt;
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = false;
+            panel1.Visible = true;
+            listBox1.Visible = false;
+            listBox2.Visible = false;
+            button1.Visible = true;
+            CreateOrnament.Visible = false;
+            inputWord.Visible = false;
+            label1.Visible = false;
+            this.Height = 797;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             //comboBox1.SelectedIndex
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = true;
+            panel1.Visible = false;
+            listBox1.Visible = true;
+            listBox2.Visible = true;
+            button1.Visible = false;
+            CreateOrnament.Visible = true;
+            inputWord.Visible = true;
+            label1.Visible = true;
+            this.Height = 567;
+
+        }
+
+        private void pictureBox3_Click(object sender, MouseEventArgs e) {
+            if (e.Button.Equals(MouseButtons.Left)) {
+                for (int i = 0; i < mregions.Count; i++) {
+                    GraphicsPath path = new GraphicsPath();
+                    path.AddPolygon(mregions[i].points.ToArray());
+                    //Rectangle rect = new Region
+                    if (path.IsVisible(e.Location)) {
+                        currentRegion = i;
+                        label1.Text = mregions[i].name;
+                        listBox1.Items.Clear();
+                        for (int j = 0; j < foundings.Count; j++) {
+                            if (foundings[j].region == i) {
+                                listBox1.Items.Add(foundings[j].name);
+                                listBox1.SelectedIndex = 0;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
         }
     }
 }

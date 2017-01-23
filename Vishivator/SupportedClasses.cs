@@ -22,6 +22,7 @@ namespace Vishivator {
     public class OrnamentFounding {
         public string imageFile { get; set; }
         public string name { get; set; }
+        public int region { get; set; }
         public ColorO backgroundColor { get; set; }
         public ColorO redColor { get; set; }
         public ColorO blackColor { get; set; }
@@ -40,5 +41,10 @@ namespace Vishivator {
         public string imageFile { get; set; }
         public string name { get; set; }
         public List<Region> regions { get; set; }
+    }
+
+    public class MapRegion {
+        public string name { get; set; }
+        public List<PointF> points { get; set; }
     }
 }
